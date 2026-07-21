@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
 
 <meta charset="UTF-8">
@@ -8,20 +7,452 @@
 
 <title>SurLog Logistics | Conectando el sur con México</title>
 
-<meta name="description" content="SurLog Logistics ofrece soluciones de transporte y logística de carga conectando empresas del sur de México con destinos nacionales.">
-
-
-<!-- Google Fonts -->
+<meta name="description" content="SurLog Logistics - Transporte y logística de carga en México.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Montserrat+Alternates:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Montserrat+Alternates:wght@500;700&display=swap" rel="stylesheet">
 
 
-<!-- CSS -->
+<style>
 
-<link rel="stylesheet" href="style.css">
+/* =========================
+   VARIABLES CORPORATIVAS
+========================= */
+
+:root{
+
+--azul:#0D1B3D;
+--naranja:#FF6A00;
+--gris:#6B7280;
+--gris-claro:#F1F3F5;
+--blanco:#FFFFFF;
+
+}
+
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+
+body{
+
+font-family:'Montserrat',sans-serif;
+color:var(--azul);
+background:white;
+
+}
+
+
+a{
+
+text-decoration:none;
+
+}
+
+
+/* ================= HEADER ================= */
+
+
+header{
+
+height:90px;
+background:var(--azul);
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:0 8%;
+
+position:sticky;
+top:0;
+z-index:1000;
+
+}
+
+
+.logo{
+
+color:white;
+font-size:28px;
+font-weight:800;
+
+}
+
+
+.logo span{
+
+color:var(--naranja);
+
+}
+
+
+nav ul{
+
+display:flex;
+gap:25px;
+list-style:none;
+
+}
+
+
+nav a{
+
+color:white;
+font-size:14px;
+font-weight:600;
+
+}
+
+
+nav a:hover{
+
+color:var(--naranja);
+
+}
+
+
+.btn{
+
+background:var(--naranja);
+color:white;
+
+padding:14px 25px;
+
+border-radius:6px;
+
+font-weight:700;
+
+}
+
+
+/* ================= HERO ================= */
+
+
+.hero{
+
+min-height:650px;
+
+display:flex;
+align-items:center;
+
+padding:0 8%;
+
+
+background:
+
+linear-gradient(
+rgba(13,27,61,.80),
+rgba(13,27,61,.80)
+),
+
+url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d3")
+center/cover;
+
+
+}
+
+
+.hero-content{
+
+max-width:700px;
+
+}
+
+
+.hero h1{
+
+font-size:55px;
+color:white;
+line-height:1.1;
+
+margin-bottom:25px;
+
+}
+
+
+.hero p{
+
+color:white;
+font-size:20px;
+
+margin-bottom:35px;
+
+}
+
+
+.botones{
+
+display:flex;
+gap:20px;
+
+}
+
+
+.btn-outline{
+
+border:2px solid white;
+color:white;
+
+padding:14px 25px;
+
+border-radius:6px;
+
+font-weight:700;
+
+}
+
+
+/* ================= SERVICIOS ================= */
+
+
+section{
+
+padding:80px 8%;
+
+}
+
+
+h2{
+
+text-align:center;
+font-size:36px;
+
+margin-bottom:50px;
+
+}
+
+
+
+.servicios{
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+
+
+.card{
+
+padding:30px;
+
+background:white;
+
+border-radius:12px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+
+.card h3{
+
+margin-bottom:15px;
+
+}
+
+
+
+/* ================= CONFIANZA ================= */
+
+
+.confianza{
+
+background:var(--azul);
+
+color:white;
+
+}
+
+
+.confianza h2{
+
+color:white;
+
+}
+
+
+.confianza li{
+
+list-style:none;
+
+font-size:20px;
+
+margin:15px;
+
+}
+
+
+
+/* ================= COBERTURA ================= */
+
+
+.cobertura{
+
+background:var(--gris-claro);
+
+text-align:center;
+
+}
+
+
+.ciudades{
+
+display:flex;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+gap:15px;
+
+}
+
+
+.ciudades span{
+
+background:white;
+
+padding:15px 25px;
+
+border-radius:30px;
+
+font-weight:600;
+
+}
+
+
+
+/* ================= FORMULARIO ================= */
+
+
+form{
+
+max-width:700px;
+
+margin:auto;
+
+display:grid;
+
+gap:15px;
+
+}
+
+
+input, textarea{
+
+padding:15px;
+
+border:1px solid #ddd;
+
+border-radius:8px;
+
+font-family:inherit;
+
+}
+
+
+
+/* ================= FOOTER ================= */
+
+
+footer{
+
+background:#081126;
+
+color:white;
+
+padding:40px 8%;
+
+text-align:center;
+
+}
+
+
+footer p{
+
+color:#ddd;
+
+}
+
+
+
+/* ================= MOVIL ================= */
+
+
+@media(max-width:900px){
+
+
+header{
+
+flex-direction:column;
+height:auto;
+padding:25px;
+
+}
+
+
+nav ul{
+
+flex-direction:column;
+margin:20px;
+
+}
+
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+
+.servicios{
+
+grid-template-columns:1fr;
+
+}
+
+
+.botones{
+
+flex-direction:column;
+
+}
+
+
+}
+
+
+</style>
 
 
 </head>
@@ -30,15 +461,10 @@
 <body>
 
 
-<!-- HEADER -->
-
 <header>
 
-
-<div class="logo-container">
-
-<img src="assets/logo.png" alt="SurLog Logistics">
-
+<div class="logo">
+Sur<span>Log</span> Logistics
 </div>
 
 
@@ -52,17 +478,15 @@
 
 <li><a href="#nosotros">Nosotros</a></li>
 
-<li><a href="#cobertura">Cobertura</a></li>
-
-<li><a href="#cotizacion">Cotización</a></li>
+<li><a href="#contacto">Contacto</a></li>
 
 </ul>
 
 </nav>
 
 
-<a class="btn-principal" href="#cotizacion">
-Solicitar cotización
+<a href="#cotizar" class="btn">
+Cotizar
 </a>
 
 
@@ -70,18 +494,10 @@ Solicitar cotización
 
 
 
-<main>
-
-
-
-<!-- HERO -->
-
 
 <section class="hero" id="inicio">
 
-
 <div class="hero-content">
-
 
 <h1>
 Conectando el sur con México.
@@ -89,24 +505,19 @@ Conectando el sur con México.
 
 
 <p>
-Soluciones de transporte y logística confiables para empresas que buscan seguridad, eficiencia y cumplimiento.
+Soluciones de transporte y logística confiables para empresas que necesitan mover su mercancía de forma segura y eficiente.
 </p>
 
 
-<div class="hero-buttons">
+<div class="botones">
 
-
-<a class="btn-principal" href="#cotizacion">
-Cotizar ahora
+<a class="btn" href="#cotizar">
+Solicitar cotización
 </a>
 
 
-<a class="btn-secundario" 
-href="https://wa.me/5210000000000"
-target="_blank">
-
+<a class="btn-outline" href="#">
 WhatsApp
-
 </a>
 
 
@@ -114,17 +525,14 @@ WhatsApp
 
 
 </div>
-
 
 </section>
 
 
 
 
-<!-- SERVICIOS -->
 
-
-<section class="servicios-section" id="servicios">
+<section id="servicios">
 
 
 <h2>
@@ -132,60 +540,48 @@ Nuestros Servicios
 </h2>
 
 
-<div class="grid-servicios">
+<div class="servicios">
 
 
+<div class="card">
 
-<div class="card-servicio">
-
-<h3>
-🚛 Transporte de carga
-</h3>
+<h3>🚛 Transporte de carga</h3>
 
 <p>
-Movimiento de mercancía nacional con operadores confiables.
+Movimiento nacional de mercancía con operadores confiables.
 </p>
 
 </div>
 
 
+<div class="card">
 
-<div class="card-servicio">
-
-<h3>
-📦 Logística empresarial
-</h3>
+<h3>📦 Logística empresarial</h3>
 
 <p>
-Soluciones adaptadas a las necesidades de cada cliente.
+Soluciones adaptadas para empresas.
 </p>
 
 </div>
 
 
+<div class="card">
 
-<div class="card-servicio">
-
-<h3>
-🏭 Carga industrial
-</h3>
+<h3>🏭 Carga industrial</h3>
 
 <p>
-Transporte para empresas manufactureras y comerciales.
+Transporte especializado.
 </p>
 
 </div>
 
 
+<div class="card">
 
-<div class="card-servicio">
-
-<h3>
-🔄 Coordinación logística
-</h3>
+<h3>🔄 Coordinación logística</h3>
 
 <p>
-Conectamos clientes con unidades disponibles.
+Conexión entre clientes y unidades.
 </p>
 
 </div>
@@ -200,13 +596,7 @@ Conectamos clientes con unidades disponibles.
 
 
 
-<!-- NOSOTROS -->
-
-
-<section class="confianza-section" id="nosotros">
-
-
-<div class="confianza-content">
+<section class="confianza" id="nosotros">
 
 
 <h2>
@@ -214,7 +604,7 @@ Movemos más que mercancía, conectamos negocios.
 </h2>
 
 
-<ul class="lista-confianza">
+<ul>
 
 <li>✓ Atención personalizada</li>
 
@@ -224,10 +614,33 @@ Movemos más que mercancía, conectamos negocios.
 
 <li>✓ Cobertura nacional</li>
 
-<li>✓ Compromiso con entregas</li>
-
-
 </ul>
+
+
+</section>
+
+
+
+
+
+<section class="cobertura">
+
+
+<h2>
+Nuestra Cobertura
+</h2>
+
+
+<div class="ciudades">
+
+<span>Puebla</span>
+<span>Veracruz</span>
+<span>Tabasco</span>
+<span>Chiapas</span>
+<span>Oaxaca</span>
+<span>CDMX</span>
+<span>Monterrey</span>
+<span>Guadalajara</span>
 
 
 </div>
@@ -239,49 +652,7 @@ Movemos más que mercancía, conectamos negocios.
 
 
 
-<!-- COBERTURA -->
-
-
-<section class="cobertura-section" id="cobertura">
-
-
-<h2>
-Nuestra Cobertura
-</h2>
-
-
-<ul class="ciudades-cobertura">
-
-<li>Puebla</li>
-
-<li>Veracruz</li>
-
-<li>Tabasco</li>
-
-<li>Chiapas</li>
-
-<li>Oaxaca</li>
-
-<li>CDMX</li>
-
-<li>Monterrey</li>
-
-<li>Guadalajara</li>
-
-
-</ul>
-
-
-</section>
-
-
-
-
-
-<!-- COTIZACION -->
-
-
-<section class="cotizacion-section" id="cotizacion">
+<section id="cotizar">
 
 
 <h2>
@@ -289,39 +660,26 @@ Solicita tu cotización
 </h2>
 
 
-
 <form>
 
 
-<input type="text" placeholder="Nombre completo">
+<input placeholder="Nombre">
 
+<input placeholder="Empresa">
 
-<input type="text" placeholder="Empresa">
+<input placeholder="Teléfono">
 
+<input placeholder="Correo">
 
-<input type="tel" placeholder="Teléfono">
+<input placeholder="Origen">
 
-
-<input type="email" placeholder="Correo">
-
-
-<input type="text" placeholder="Origen">
-
-
-<input type="text" placeholder="Destino">
-
-
-<input type="text" placeholder="Tipo de mercancía">
-
+<input placeholder="Destino">
 
 <textarea placeholder="Detalles del envío"></textarea>
 
 
-
-<button class="btn-principal">
-
+<button class="btn">
 Enviar solicitud
-
 </button>
 
 
@@ -332,23 +690,9 @@ Enviar solicitud
 
 
 
-</main>
 
 
-
-
-
-
-<!-- FOOTER -->
-
-
-<footer>
-
-
-<div class="footer-content">
-
-
-<div>
+<footer id="contacto">
 
 <h3>
 SurLog Logistics
@@ -360,32 +704,13 @@ Conectando el sur con México.
 </p>
 
 
-</div>
-
-
-
-<div>
-
 <p>
 contacto@surlog.com.mx
 </p>
 
 
-<p>
-surlog.com.mx
-</p>
-
-
-</div>
-
-
-</div>
-
-
 </footer>
 
 
-
 </body>
-
 </html>
