@@ -24,6 +24,7 @@
 }
 
 body {
+   background:white;
     font-family: var(--font-principal);
     color: var(--azul-principal);
     background-color: var(--blanco);
