@@ -1,0 +1,94 @@
+/* ==========================================================================
+   SURLOG LOGISTICS - ESTILOS BASE
+   ========================================================================== */
+
+/* --- VARIABLES CORPORATIVAS --- */
+:root {
+    /* Colores Oficiales */
+    --azul-principal: #0D1B3D; /* Seguridad, Profesionalismo */
+    --naranja-accion: #FF6A00; /* Movimiento, Energía, Botones */
+    --gris: #6B7280;           /* Textos secundarios */
+    --gris-claro: #F1F3F5;     /* Fondos de secciones, tarjetas */
+    --blanco: #FFFFFF;         /* Contraste */
+
+    /* Tipografías */
+    --font-principal: 'Montserrat', sans-serif;
+    --font-secundaria: 'Montserrat Alternates', sans-serif;
+}
+
+/* --- RESETEO BÁSICO --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-principal);
+    color: var(--azul-principal);
+    background-color: var(--blanco);
+    line-height: 1.6;
+}
+
+/* --- TIPOGRAFÍA Y ENCABEZADOS --- */
+h1, h2, h3, h4 {
+    font-family: var(--font-principal);
+    font-weight: 700;
+    color: var(--azul-principal);
+}
+
+/* Clases especiales para el eslogan */
+.eslogan, .eslogan-footer {
+    font-family: var(--font-secundaria);
+    font-weight: 600;
+}
+
+p {
+    color: var(--gris);
+}
+
+a {
+    text-decoration: none;
+    color: var(--azul-principal);
+    transition: color 0.3s ease;
+}
+
+/* --- BOTONES (Llamados a la Acción) --- */
+.btn-principal {
+    display: inline-block;
+    background-color: var(--naranja-accion);
+    color: var(--blanco);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-principal:hover {
+    background-color: #e65c00; /* Un tono ligeramente más oscuro para el hover */
+    transform: translateY(-2px);
+    color: var(--blanco);
+}
+
+.btn-secundario {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--blanco);
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    border: 2px solid var(--blanco);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-secundario:hover {
+    background-color: var(--blanco);
+    color: var(--azul-principal);
+}
+
+/* (A partir de aquí, iremos construyendo las clases para el grid, flexbox del header, el layout de las tarjetas, etc.) */
