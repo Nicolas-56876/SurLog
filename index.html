@@ -1,717 +1,465 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-   
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>SurLog Logistics | Conectando el sur con México</title>
-
 <meta name="description" content="SurLog Logistics - Transporte y logística de carga en México.">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Montserrat+Alternates:wght@500;700&display=swap" rel="stylesheet">
 
-
 <style>
-
 /* =========================
    VARIABLES CORPORATIVAS
 ========================= */
-
-:root{
-
---azul:#0D1B3D;
---naranja:#FF6A00;
---gris:#6B7280;
---gris-claro:#F1F3F5;
---blanco:#FFFFFF;
-
+:root {
+    --azul: #0D1B3D;
+    --azul-bagito: #404F65; /* Color azul más claro basado en tu mockup */
+    --naranja: #FF6A00;
+    --gris: #6B7280;
+    --gris-claro: #F1F3F5;
+    --blanco: #FFFFFF;
 }
 
-
-*{
-
-margin:0;
-padding:0;
-box-sizing:border-box;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-html{
-
-scroll-behavior:smooth;
-
+html {
+    scroll-behavior: smooth;
 }
 
-
-body{
-
-font-family:'Montserrat',sans-serif;
-color:var(--azul);
-background:white;
-
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--azul);
+    background: white;
 }
 
-
-a{
-
-text-decoration:none;
-
+a {
+    text-decoration: none;
 }
-
 
 /* ================= HEADER ================= */
-
-
-header{
-
-height:90px;
-background:var(--azul);
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:0 8%;
-
-position:sticky;
-top:0;
-z-index:1000;
-
+header {
+    height: 90px;
+    background: var(--azul);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-
-.logo{
-
-color:white;
-font-size:28px;
-font-weight:800;
-
+.logo {
+    color: white;
+    font-size: 28px;
+    font-weight: 800;
 }
 
-
-.logo span{
-
-color:var(--naranja);
-
+.logo span {
+    color: var(--naranja);
 }
 
-
-nav ul{
-
-display:flex;
-gap:25px;
-list-style:none;
-
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
 }
 
-
-nav a{
-
-color:white;
-font-size:14px;
-font-weight:600;
-
+nav a {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
 }
 
-
-nav a:hover{
-
-color:var(--naranja);
-
+nav a:hover {
+    color: var(--naranja);
 }
 
-
-.btn{
-
-background:var(--naranja);
-color:white;
-
-padding:14px 25px;
-
-border-radius:6px;
-
-font-weight:700;
-
+.btn {
+    background: var(--naranja);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 6px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
+.btn:hover {
+    background: #e65f00;
+}
 
 /* ================= HERO ================= */
-
-
-.hero{
-
-min-height:650px;
-
-display:flex;
-align-items:center;
-
-padding:0 8%;
-
-
-background:
-
-linear-gradient(
-rgba(13,27,61,.80),
-rgba(13,27,61,.80)
-),
-
-url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d3")
-center/cover;
-
-
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px 8%;
+    background: var(--azul-bagito); /* Fondo liso según el mockup */
 }
 
-
-.hero-content{
-
-max-width:700px;
-
+.hero-content {
+    flex: 1;
+    max-width: 600px;
 }
 
-
-.hero h1{
-
-font-size:55px;
-color:white;
-line-height:1.1;
-
-margin-bottom:25px;
-
+.hero h1 {
+    font-size: 55px;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 25px;
 }
 
-
-.hero p{
-
-color:white;
-font-size:20px;
-
-margin-bottom:35px;
-
+.hero p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 35px;
+    line-height: 1.5;
 }
 
-
-.botones{
-
-display:flex;
-gap:20px;
-
+.botones {
+    display: flex;
+    gap: 20px;
 }
 
-
-.btn-outline{
-
-border:2px solid white;
-color:white;
-
-padding:14px 25px;
-
-border-radius:6px;
-
-font-weight:700;
-
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+    padding: 14px 25px;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: background 0.3s, color 0.3s;
 }
 
+.btn-outline:hover {
+    background: white;
+    color: var(--azul-bagito);
+}
+
+/* ================= HERO VISUAL (Lado Derecho) ================= */
+.hero-visual {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 550px;
+}
+
+.trailer-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    object-fit: cover;
+}
+
+.logo-superpuesto {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 220px;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
 
 /* ================= SERVICIOS ================= */
-
-
-section{
-
-padding:80px 8%;
-
+section {
+    padding: 80px 8%;
 }
 
-
-h2{
-
-text-align:center;
-font-size:36px;
-
-margin-bottom:50px;
-
+h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
 }
 
-
-
-.servicios{
-
-display:grid;
-
-grid-template-columns:repeat(4,1fr);
-
-gap:25px;
-
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
 }
 
-
-
-.card{
-
-padding:30px;
-
-background:white;
-
-border-radius:12px;
-
-box-shadow:0 10px 30px rgba(0,0,0,.08);
-
-transition:.3s;
-
+.card {
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    transition: .3s;
 }
 
-
-
-.card:hover{
-
-transform:translateY(-8px);
-
+.card:hover {
+    transform: translateY(-8px);
 }
 
-
-.card h3{
-
-margin-bottom:15px;
-
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--azul);
 }
-
-
 
 /* ================= CONFIANZA ================= */
-
-
-.confianza{
-
-background:var(--azul);
-
-color:white;
-
+.confianza {
+    background: var(--azul);
+    color: white;
 }
 
-
-.confianza h2{
-
-color:white;
-
+.confianza h2 {
+    color: white;
 }
 
-
-.confianza li{
-
-list-style:none;
-
-font-size:20px;
-
-margin:15px;
-
+.confianza ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
 }
 
-
+.confianza li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: 500;
+}
 
 /* ================= COBERTURA ================= */
-
-
-.cobertura{
-
-background:var(--gris-claro);
-
-text-align:center;
-
+.cobertura {
+    background: var(--gris-claro);
+    text-align: center;
 }
 
-
-.ciudades{
-
-display:flex;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-gap:15px;
-
+.ciudades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
-
-.ciudades span{
-
-background:white;
-
-padding:15px 25px;
-
-border-radius:30px;
-
-font-weight:600;
-
+.ciudades span {
+    background: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
 }
-
-
 
 /* ================= FORMULARIO ================= */
-
-
-form{
-
-max-width:700px;
-
-margin:auto;
-
-display:grid;
-
-gap:15px;
-
+form {
+    max-width: 700px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-
-input, textarea{
-
-padding:15px;
-
-border:1px solid #ddd;
-
-border-radius:8px;
-
-font-family:inherit;
-
+input, textarea {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    width: 100%;
 }
 
+textarea {
+    grid-column: span 2;
+    min-height: 120px;
+    resize: vertical;
+}
 
+form .btn {
+    grid-column: span 2;
+}
 
 /* ================= FOOTER ================= */
-
-
-footer{
-
-background:#081126;
-
-color:white;
-
-padding:40px 8%;
-
-text-align:center;
-
+footer {
+    background: #081126;
+    color: white;
+    padding: 40px 8%;
+    text-align: center;
 }
 
-
-footer p{
-
-color:#ddd;
-
+footer h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
 }
 
-
+footer p {
+    color: #ddd;
+    margin-bottom: 10px;
+}
 
 /* ================= MOVIL ================= */
+@media(max-width: 950px){
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 25px;
+    }
+    nav ul {
+        flex-direction: column;
+        margin: 20px;
+        text-align: center;
+    }
+    
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5%;
+    }
+    .hero h1 {
+        font-size: 40px;
+    }
+    .botones {
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .hero-visual {
+        margin-top: 30px;
+        width: 100%;
+    }
+    .logo-superpuesto {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: -40px;
+        width: 180px;
+    }
 
+    .servicios {
+        grid-template-columns: 1fr 1fr;
+    }
 
-@media(max-width:900px){
-
-
-header{
-
-flex-direction:column;
-height:auto;
-padding:25px;
-
+    form {
+        grid-template-columns: 1fr;
+    }
+    textarea {
+        grid-column: span 1;
+    }
+    form .btn {
+        grid-column: span 1;
+    }
 }
 
-
-nav ul{
-
-flex-direction:column;
-margin:20px;
-
+@media(max-width: 600px){
+    .servicios {
+        grid-template-columns: 1fr;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
 }
-
-
-.hero h1{
-
-font-size:38px;
-
-}
-
-
-.servicios{
-
-grid-template-columns:1fr;
-
-}
-
-
-.botones{
-
-flex-direction:column;
-
-}
-
-
-}
-
-
 </style>
-
-
 </head>
-
 
 <body>
 
-
 <header>
-
-<div class="logo">
-Sur<span>Log</span> Logistics
-</div>
-
-
-<nav>
-
-<ul>
-
-<li><a href="#inicio">Inicio</a></li>
-
-<li><a href="#servicios">Servicios</a></li>
-
-<li><a href="#nosotros">Nosotros</a></li>
-
-<li><a href="#contacto">Contacto</a></li>
-
-</ul>
-
-</nav>
-
-
-<a href="#cotizar" class="btn">
-Cotizar
-</a>
-
-
+    <div class="logo">
+        Sur<span>Log</span> Logistics
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <a href="#cotizar" class="btn">Cotizar</a>
 </header>
 
-
-
-
 <section class="hero" id="inicio">
-
-<div class="hero-content">
-
-<h1>
-Conectando el sur con México.
-</h1>
-
-
-<p>
-Soluciones de transporte y logística confiables para empresas que necesitan mover su mercancía de forma segura y eficiente.
-</p>
-
-
-<div class="botones">
-
-<a class="btn" href="#cotizar">
-Solicitar cotización
-</a>
-
-
-<a class="btn-outline" href="#">
-WhatsApp
-</a>
-
-
-</div>
-
-
-</div>
-
+    <div class="hero-content">
+        <h1>Conectando el sur con México.</h1>
+        <p>Soluciones de transporte y logística confiables para empresas que necesitan mover su mercancía de forma segura y eficiente.</p>
+        <div class="botones">
+            <a class="btn" href="#cotizar">Solicitar cotización</a>
+            <a class="btn-outline" href="#">WhatsApp</a>
+        </div>
+    </div>
+    
+    <!-- Espacio del lado derecho agregado con base en tus notas -->
+    <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d3" alt="Tráiler en carretera" class="trailer-img">
+        <img src="image_2.png" alt="SurLog Logistics Logo" class="logo-superpuesto">
+    </div>
 </section>
-
-
-
-
 
 <section id="servicios">
-
-
-<h2>
-Nuestros Servicios
-</h2>
-
-
-<div class="servicios">
-
-
-<div class="card">
-
-<h3>🚛 Transporte de carga</h3>
-
-<p>
-Movimiento nacional de mercancía con operadores confiables.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>📦 Logística empresarial</h3>
-
-<p>
-Soluciones adaptadas para empresas.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🏭 Carga industrial</h3>
-
-<p>
-Transporte especializado.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<h3>🔄 Coordinación logística</h3>
-
-<p>
-Conexión entre clientes y unidades.
-</p>
-
-</div>
-
-
-</div>
-
-
+    <h2>Nuestros Servicios</h2>
+    <div class="servicios">
+        <div class="card">
+            <h3>🚛 Transporte de carga</h3>
+            <p>Movimiento nacional de mercancía con operadores confiables.</p>
+        </div>
+        <div class="card">
+            <h3>📦 Logística empresarial</h3>
+            <p>Soluciones adaptadas para empresas.</p>
+        </div>
+        <div class="card">
+            <h3>🏭 Carga industrial</h3>
+            <p>Transporte especializado.</p>
+        </div>
+        <div class="card">
+            <h3>🔄 Coordinación logística</h3>
+            <p>Conexión entre clientes y unidades.</p>
+        </div>
+    </div>
 </section>
-
-
-
-
 
 <section class="confianza" id="nosotros">
-
-
-<h2>
-Movemos más que mercancía, conectamos negocios.
-</h2>
-
-
-<ul>
-
-<li>✓ Atención personalizada</li>
-
-<li>✓ Seguimiento de envíos</li>
-
-<li>✓ Transportistas confiables</li>
-
-<li>✓ Cobertura nacional</li>
-
-</ul>
-
-
+    <h2>Movemos más que mercancía, conectamos negocios.</h2>
+    <ul>
+        <li>✓ Atención personalizada</li>
+        <li>✓ Seguimiento de envíos</li>
+        <li>✓ Transportistas confiables</li>
+        <li>✓ Cobertura nacional</li>
+    </ul>
 </section>
-
-
-
-
 
 <section class="cobertura">
-
-
-<h2>
-Nuestra Cobertura
-</h2>
-
-
-<div class="ciudades">
-
-<span>Puebla</span>
-<span>Veracruz</span>
-<span>Tabasco</span>
-<span>Chiapas</span>
-<span>Oaxaca</span>
-<span>CDMX</span>
-<span>Monterrey</span>
-<span>Guadalajara</span>
-
-
-</div>
-
-
+    <h2>Nuestra Cobertura</h2>
+    <div class="ciudades">
+        <span>Puebla</span>
+        <span>Veracruz</span>
+        <span>Tabasco</span>
+        <span>Chiapas</span>
+        <span>Oaxaca</span>
+        <span>CDMX</span>
+        <span>Monterrey</span>
+        <span>Guadalajara</span>
+    </div>
 </section>
-
-
-
-
 
 <section id="cotizar">
-
-
-<h2>
-Solicita tu cotización
-</h2>
-
-
-<form>
-
-
-<input placeholder="Nombre">
-
-<input placeholder="Empresa">
-
-<input placeholder="Teléfono">
-
-<input placeholder="Correo">
-
-<input placeholder="Origen">
-
-<input placeholder="Destino">
-
-<textarea placeholder="Detalles del envío"></textarea>
-
-
-<button class="btn">
-Enviar solicitud
-</button>
-
-
-</form>
-
-
+    <h2>Solicita tu cotización</h2>
+    <form>
+        <input placeholder="Nombre">
+        <input placeholder="Empresa">
+        <input placeholder="Teléfono">
+        <input placeholder="Correo">
+        <input placeholder="Origen">
+        <input placeholder="Destino">
+        <textarea placeholder="Detalles del envío"></textarea>
+        <button class="btn" type="button">Enviar solicitud</button>
+    </form>
 </section>
 
-
-
-
-
 <footer id="contacto">
-
-<h3>
-SurLog Logistics
-</h3>
-
-
-<p>
-Conectando el sur con México.
-</p>
-
-
-<p>
-contacto@surlog.com.mx
-</p>
-
-
+    <h3>SurLog Logistics</h3>
+    <p>Conectando el sur con México.</p>
+    <p>contacto@surlog.com.mx</p>
 </footer>
-
 
 </body>
 </html>
