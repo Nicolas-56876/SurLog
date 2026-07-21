@@ -1,229 +1,139 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>SurLog Logistics | Conectando el sur con México</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
-body{
-background:#f4f6f8;
-color:#222;
-}
-
-header{
-background:#003366;
-color:white;
-padding:20px 10%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:30px;
-font-weight:700;
-}
-
-nav a{
-color:white;
-text-decoration:none;
-margin-left:25px;
-font-weight:500;
-}
-
-.hero{
-
-height:90vh;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-
-background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1600&q=80");
-
-background-size:cover;
-background-position:center;
-
-color:white;
-text-align:center;
-
-}
-
-.hero h1{
-
-font-size:60px;
-
-}
-
-.hero p{
-
-font-size:24px;
-margin-top:15px;
-
-}
-
-.btn{
-
-margin-top:40px;
-background:#ff7a00;
-padding:15px 35px;
-border-radius:50px;
-text-decoration:none;
-color:white;
-font-weight:bold;
-
-}
-
-section{
-
-padding:90px 10%;
-
-}
-
-.servicios{
-
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-
-}
-
-.card{
-
-background:white;
-padding:35px;
-border-radius:15px;
-box-shadow:0 10px 20px rgba(0,0,0,.08);
-
-}
-
-footer{
-
-background:#003366;
-color:white;
-padding:40px;
-text-align:center;
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurLog Logistics | Conectando el sur con México</title>
+    
+    <!-- Importación de Tipografías Corporativas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Hoja de Estilos -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
+    <!-- 1. HEADER -->
+    <header>
+        <div class="logo-container">
+            <!-- Aquí irá tu logo: assets/logo.png -->
+            <img src="assets/logo.png" alt="SurLog Logistics Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#cobertura">Cobertura</a></li>
+                <li><a href="#cotizacion">Cotización</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <a href="#cotizacion" class="btn-principal">Solicitar cotización</a>
+    </header>
 
-<div class="logo">
+    <main>
+        <!-- 2. HERO PRINCIPAL -->
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Conectando el sur con México.</h1>
+                <p>Soluciones de transporte y logística confiables para empresas que necesitan mover su mercancía de forma segura y eficiente.</p>
+                <div class="hero-buttons">
+                    <a href="#cotizacion" class="btn-principal">Solicitar cotización</a>
+                    <a href="#whatsapp" class="btn-secundario">Contactar por WhatsApp</a>
+                </div>
+            </div>
+            <!-- El fondo de esta sección llevará la imagen hero.jpg mediante CSS -->
+        </section>
 
-SurLog Logistics
+        <!-- 3. SERVICIOS -->
+        <section id="servicios" class="servicios-section">
+            <h2>Nuestros Servicios</h2>
+            <div class="grid-servicios">
+                <div class="card-servicio">
+                    <h3>Transporte de carga</h3>
+                    <p>Movimiento de mercancía nacional con operadores confiables.</p>
+                </div>
+                <div class="card-servicio">
+                    <h3>Logística empresarial</h3>
+                    <p>Soluciones adaptadas a las necesidades de cada cliente.</p>
+                </div>
+                <div class="card-servicio">
+                    <h3>Carga industrial</h3>
+                    <p>Transporte para empresas manufactureras y comerciales.</p>
+                </div>
+                <div class="card-servicio">
+                    <h3>Coordinación logística</h3>
+                    <p>Conexión entre clientes y unidades disponibles.</p>
+                </div>
+            </div>
+        </section>
 
-</div>
+        <!-- 4. SECCIÓN DE CONFIANZA -->
+        <section id="nosotros" class="confianza-section">
+            <div class="confianza-content">
+                <h2>Movemos más que mercancía, conectamos negocios.</h2>
+                <ul class="lista-confianza">
+                    <li>✓ Atención personalizada</li>
+                    <li>✓ Seguimiento de envíos</li>
+                    <li>✓ Red de transportistas confiables</li>
+                    <li>✓ Cobertura nacional</li>
+                    <li>✓ Compromiso con tiempos de entrega</li>
+                </ul>
+            </div>
+        </section>
 
-<nav>
+        <!-- 5. COBERTURA -->
+        <section id="cobertura" class="cobertura-section">
+            <h2>Nuestra Cobertura</h2>
+            <!-- Aquí irá el mapa interactivo o imagen -->
+            <ul class="ciudades-cobertura">
+                <li>Puebla</li>
+                <li>Veracruz</li>
+                <li>Tabasco</li>
+                <li>Chiapas</li>
+                <li>Oaxaca</li>
+                <li>Ciudad de México</li>
+                <li>Monterrey</li>
+                <li>Guadalajara</li>
+            </ul>
+        </section>
 
-<a href="#">Inicio</a>
-<a href="#">Servicios</a>
-<a href="#">Contacto</a>
+        <!-- 6. FORMULARIO DE COTIZACIÓN -->
+        <section id="cotizacion" class="cotizacion-section">
+            <h2>Solicita tu Cotización</h2>
+            <form id="form-cotizacion" action="#" method="POST">
+                <input type="text" name="nombre" placeholder="Nombre completo" required>
+                <input type="text" name="empresa" placeholder="Empresa">
+                <input type="tel" name="telefono" placeholder="Teléfono" required>
+                <input type="email" name="correo" placeholder="Correo electrónico" required>
+                <input type="text" name="origen" placeholder="Ciudad de origen" required>
+                <input type="text" name="destino" placeholder="Ciudad de destino" required>
+                <input type="text" name="mercancia" placeholder="Tipo de mercancía" required>
+                <input type="text" name="peso" placeholder="Peso aproximado" required>
+                <textarea name="mensaje" placeholder="Mensaje o detalles adicionales" rows="4"></textarea>
+                <button type="submit" class="btn-principal">Solicitar cotización</button>
+            </form>
+        </section>
+    </main>
 
-</nav>
+    <!-- 7. FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="brand-footer">
+                <h3>SurLog Logistics</h3>
+                <p class="eslogan-footer">"Conectando el sur con México."</p>
+            </div>
+            <div class="contacto-footer">
+                <p>Correo: <a href="mailto:contacto@surlog.com.mx">contacto@surlog.com.mx</a></p>
+                <p>Dominio: <a href="https://surlog.com.mx" target="_blank">surlog.com.mx</a></p>
+            </div>
+        </div>
+    </footer>
 
-</header>
-
-<section class="hero">
-
-<h1>Conectando el sur con México.</h1>
-
-<p>
-Soluciones logísticas eficientes para empresas de todo el país.
-</p>
-
-<a class="btn" href="mailto:cotizaciones@surlog.com.mx">
-
-Solicitar Cotización
-
-</a>
-
-</section>
-
-<section>
-
-<h2 style="text-align:center;font-size:40px;margin-bottom:50px;">
-
-Nuestros Servicios
-
-</h2>
-
-<div class="servicios">
-
-<div class="card">
-
-<h3>🚛 Transporte Terrestre</h3>
-
-<p>
-Movemos mercancía de forma segura y eficiente.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>📦 Logística Integral</h3>
-
-<p>
-Planeación y coordinación de envíos nacionales.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>⏱️ Entregas Puntuales</h3>
-
-<p>
-Comprometidos con los tiempos de entrega.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-<h2>SurLog Logistics</h2>
-
-<p>
-
-Conectando el sur con México.
-
-</p>
-
-<br>
-
-<p>
-
-📧 contacto@surlog.com.mx
-
-</p>
-
-</footer>
-
+    <!-- Archivo JS -->
+    <script src="script.js"></script>
 </body>
-
 </html>
