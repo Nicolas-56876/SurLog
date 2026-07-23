@@ -432,15 +432,25 @@ footer {
     <!-- Columna 3: Formulario -->
     <div class="col-formulario" id="contacto">
         <h3>Solicita tu cotización</h3>
-        <form>
+        <form action="https://formsubmit.co/cotizacion@surlog.com.mx" method="POST">
+         <input type="hidden" name="_subject" value="Nueva cotización SurLog Logistics">
+         <input type="hidden" name="_captcha" value="false">
+         <input type="hidden" name="_template" value="table">
+         <input type="hidden" name="_next" value="https://surlog.com.mx">
             <div class="form-row">
                 <input type="text" placeholder="Nombre" required>
                 <input type="text" placeholder="Empresa">
             </div>
-            <input type="email" placeholder="Email*" required>
-            <input type="tel" placeholder="Teléfono">
-            <textarea placeholder="Detalles del envío (Origen, Destino, Tipo de carga...)" required></textarea>
-            <button class="btn" type="button">Enviar solicitud</button>
+            <<input type="text" name="Nombre" placeholder="Nombre" required>
+            <input type="text" name="Empresa" placeholder="Empresa">
+            <input type="email" name="Correo" placeholder="Correo electrónico" required>
+            <input type="tel" name="Telefono" placeholder="Teléfono">
+
+            <textarea
+            name="Detalles"
+            placeholder="Detalles del envío (Origen, Destino, Tipo de carga...)"
+            required></textarea>
+            <button class="btn" type="submit">
         </form>
     </div>
 
