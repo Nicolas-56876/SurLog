@@ -10,6 +10,76 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Montserrat+Alternates:wght@500;700&display=swap" rel="stylesheet">
 
 <style>
+
+/*=========================
+MENU HAMBURGUESA
+=========================*/
+
+.menu-toggle{
+    display:none;
+    background:transparent;
+    border:none;
+    color:white;
+    font-size:32px;
+    cursor:pointer;
+}
+
+/* CELULAR */
+
+@media(max-width:768px){
+
+header{
+    flex-direction:row;
+    justify-content:space-between;
+    padding:15px 20px;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+nav ul{
+    display:none;
+    position:absolute;
+    top:90px;
+    left:0;
+    width:100%;
+    background:#0D1B3D;
+    flex-direction:column;
+    text-align:center;
+    padding:20px 0;
+    gap:20px;
+    animation:menu .3s ease;
+}
+
+nav ul.active{
+    display:flex;
+}
+
+nav a{
+    font-size:18px;
+}
+
+.btn{
+    display:none;
+}
+
+}
+
+@keyframes menu{
+
+from{
+    opacity:0;
+    transform:translateY(-15px);
+}
+
+to{
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
 /* =========================
    VARIABLES CORPORATIVAS
 ========================= */
@@ -358,12 +428,19 @@ footer {
         Sur<span>Log</span> Logistics
     </div>
     <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+ <nav>
+    <button class="menu-toggle" id="menu-toggle">
+        ☰
+    </button>
+
+    <ul id="menu">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="/login">Login</a></li>
+    </ul>
+</nav>
     </nav>
     <a href="/portal" class="btn">Login </a>
 </header>
@@ -464,6 +541,36 @@ footer {
 <footer>
     <p>© 2026 SurLog Logistics. Conectando el sur con México. contacto@surlog.com.mx</p>
 </footer>
+<script>
 
+const boton = document.getElementById("menu-toggle");
+const menu = document.getElementById("menu");
+
+boton.addEventListener("click",()=>{
+
+    menu.classList.toggle("active");
+
+    if(menu.classList.contains("active")){
+        boton.innerHTML="✕";
+    }else{
+        boton.innerHTML="☰";
+    }
+
+});
+
+//Cerrar menú al seleccionar una opción
+
+document.querySelectorAll("#menu a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        menu.classList.remove("active");
+        boton.innerHTML="☰";
+
+    });
+
+});
+
+</script>
 </body>
 </html>
