@@ -215,12 +215,13 @@ Regístrate para administrar tus cotizaciones, servicios y seguimiento de envío
 
 </p>
 
-<form>
+<form id="registroForm">
 
 <label>Nombre completo</label>
 
 <input
 type="text"
+id="nombre"
 placeholder="Ej. Juan Pérez"
 required>
 
@@ -228,6 +229,7 @@ required>
 
 <input
 type="email"
+id="correo"
 placeholder="correo@empresa.com"
 required>
 
@@ -235,6 +237,7 @@ required>
 
 <input
 type="tel"
+id="telefono"
 placeholder="+52 999 999 9999"
 required>
 
@@ -242,6 +245,7 @@ required>
 
 <input
 type="password"
+id="password"
 placeholder="Mínimo 8 caracteres"
 required>
 
@@ -249,13 +253,12 @@ required>
 
 <input
 type="password"
+id="confirmarPassword"
 placeholder="Repite tu contraseña"
 required>
 
-<button>
-
+<button type="submit">
 Crear cuenta
-
 </button>
 
 </form>
@@ -279,7 +282,6 @@ Inicia sesión
 </footer>
 
 </div>
-
-</body>
 <script type="module" src="js/registro.js"></script>
+</body>
 </html>
