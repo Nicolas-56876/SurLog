@@ -15,6 +15,44 @@
 
 <style>
 
+.password-box{
+    position:relative;
+    margin-bottom:20px;
+}
+
+.password-box input{
+    padding-right:50px;
+    margin-bottom:0;
+}
+
+.toggle-password{
+
+    position:absolute;
+
+    right:15px;
+
+    top:42%;
+
+    transform:translateY(-42%);
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    color:#6B7280;
+
+    user-select:none;
+
+    transition:.3s;
+
+}
+
+.toggle-password:hover{
+
+    color:#FF6A00;
+
+}
+
 *{
 margin:0;
 padding:0;
@@ -216,24 +254,36 @@ Inicia sesión para acceder a tus cotizaciones y servicios.
 
 </p>
 
-<form>
+<form id="loginForm">
 
 <label>Correo electrónico</label>
 
 <input
 type="email"
+id="correo"
 placeholder="correo@empresa.com"
 required>
 
 <label>Contraseña</label>
 
-<input
-type="password"
-placeholder="********"
-required>
+<div class="password-box">
 
-<button>
+    <input
+    type="password"
+    id="password"
+    placeholder="********"
+    required>
 
+    <span
+    class="toggle-password"
+    onclick="togglePassword('password', this)">
+    👁️
+    </span>
+
+</div>
+
+<button type="submit">
+  
 Iniciar sesión
 
 </button>
@@ -242,7 +292,7 @@ Iniciar sesión
 
 <div class="links">
 
-<a href="#">¿Olvidaste tu contraseña?</a>
+<a href="recuperar.html">¿Olvidaste tu contraseña?</a>
 
 <a href="registro.html">
 
@@ -259,7 +309,29 @@ Crear una cuenta
 </footer>
 
 </div>
+<script>
 
+function togglePassword(id, icon){
+
+    const input=document.getElementById(id);
+
+    if(input.type==="password"){
+
+        input.type="text";
+        icon.textContent="🙈";
+
+    }else{
+
+        input.type="password";
+        icon.textContent="👁️";
+
+    }
+
+}
+
+</script>
+
+<script type="module" src="js/login.js"></script>
 </body>
 
 </html>
