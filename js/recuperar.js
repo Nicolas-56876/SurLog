@@ -1,54 +1,48 @@
-// recuperacion.js
+import { auth } from "./firebase.js";
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 import {
-  getAuth,
-  sendPasswordResetEmail
+    sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
-// Configuración de Firebase
-const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_PROYECTO.firebaseapp.com",
-  projectId: "TU_PROYECTO",
-  storageBucket: "TU_PROYECTO.firebasestorage.app",
-  messagingSenderId: "XXXXXXXX",
-  appId: "XXXXXXXX"
-};
+const formulario = document.getElementById("formRecuperacion");
 
-// Inicializar Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+formulario.addEventListener("submit", async (e) => {
 
-// Botón de recuperación
-const btnRecuperar = document.getElementById("btnRecuperar");
+    e.preventDefault();
 
-btnRecuperar.addEventListener("click", () => {
-  const correo = document.getElementById("correo").value.trim();
+    const correo = document.getElementById("correo").value.trim();
 
-  if (correo === "") {
-    alert("Ingresa tu correo electrónico.");
-    return;
-  }
+    try {
 
-  sendPasswordResetEmail(auth, correo)
-    .then(() => {
-      alert("Se envió un correo para restablecer tu contraseña.");
-    })
-    .catch((error) => {
-      console.error(error);
+        await sendPasswordResetEmail(auth, correo);
 
-      switch (error.code) {
-        case "auth/user-not-found":
-          alert("No existe una cuenta con ese correo.");
-          break;
+        alert("✅ Se envió un enlace para restablecer tu contraseña. Revisa tu correo.");
 
-        case "auth/invalid-email":
-          alert("El correo electrónico no es válido.");
-          break;
+        formulario.reset();
 
-        default:
-          alert("Ocurrió un error: " + error.message);
-      }
-    });
+    } catch (error) {
+
+        console.error(error);
+
+        switch (error.code) {
+
+            case "auth/user-not-found":
+                alert("No existe una cuenta con ese correo.");
+                break;
+
+            case "auth/invalid-email":
+                alert("El correo electrónico no es válido.");
+                break;
+
+            case "auth/too-many-requests":
+                alert("Demasiados intentos. Inténtalo más tarde.");
+                break;
+
+            default:
+                alert("Ocurrió un error: " + error.message);
+
+        }
+
+    }
+
 });
